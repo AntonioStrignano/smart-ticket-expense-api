@@ -46,9 +46,10 @@ L'applicazione è un'API REST backend sviluppata in Java con l'ecosistema Spring
 
 | Colonna | Tipo | Vincoli |
 |---|---|---|
-| `id` | UUID | Primary Key |
+| `id` | BIGINT | Generated Always as Identity, Primary Key |
 | `username` | VARCHAR | Unique, Not Null |
 | `password` | VARCHAR | Not Null |
+| `email` | VARCHAR | Unique, Not Null |
 | `role` | VARCHAR | Not Null |
 
 ### Tabella: `tickets`
@@ -57,12 +58,12 @@ L'applicazione è un'API REST backend sviluppata in Java con l'ecosistema Spring
 |---|---|---|
 | `id` | BIGINT | Generated Always as Identity, Primary Key |
 | `title` | VARCHAR | Not Null |
-| `description` | TEXT | Not Null |
-| `category` | VARCHAR | — |
-| `priority` | VARCHAR | — |
+| `description` | VARCHAR(500) | Not Null |
+| `category` | VARCHAR | Not Null |
+| `priority` | VARCHAR | Not Null |
 | `status` | VARCHAR | Not Null |
 | `created_at` | TIMESTAMP | Not Null |
-| `user_id` | UUID | Foreign Key → `users.id` |
+| `user_id` | BIGINT | Foreign Key → `users.id` |
 
 ---
 

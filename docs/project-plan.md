@@ -74,6 +74,9 @@ Portare il progetto in uno stato buildabile e ripetibile localmente.
 ### Obiettivo
 Stabilire il modello dati stabile prima della logica business.
 
+### Stato
+Completata il 2026-07-16: entity, enum, repository e schema PostgreSQL verificati tramite avvio dell'applicazione con `ddl-auto=update`.
+
 ### Attività
 - Implementare `User` e `Ticket` con vincoli JPA.
 - Definire relazioni (`User` 1-N `Ticket`).

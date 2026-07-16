@@ -9,7 +9,7 @@
 - [x] 4. Definire entity `User` + `Ticket` con annotazioni JPA
 - [x] 5. Definire le relazioni (`@ManyToOne`, `@OneToMany`)
 - [x] 6. Creare i `Repository` (Spring Data JPA)
-- [ ] 7. Verificare che Hibernate generi le tabelle correttamente (`ddl-auto=update`)
+- [x] 7. Verificare che Hibernate generi le tabelle correttamente (`ddl-auto=update`)
 
 ## Fase 3 — Sicurezza (JWT + Spring Security)
 - [ ] 8. Implementare `JwtService` (generazione + validazione token, firma HMAC-256)

@@ -8,8 +8,8 @@
 
 | Aspetto | Status |
 |---|---|
-| Fase corrente | Fase 2 — Modello Dati & Persistenza |
-| Completamento | ✅ 100% Fase 1 |
+| Fase corrente | Fase 3 — Sicurezza (JWT + Spring Security) |
+| Completamento | ✅ 100% Fase 2 |
 | Blocker | Nessuno |
 
 ---
@@ -31,20 +31,23 @@
 - [x] Correzione XML `pom.xml` (`&amp;` nel campo `name`)
 - [x] Dipendenza Spring AI corretta (`spring-ai.version=1.0.0`, starter OpenAI aggiornato)
 - [x] Build Maven verificata con successo (`mvn clean verify -DskipTests`)
+- [x] Entity JPA `User` e `Ticket` implementate con enum di dominio
+- [x] Relazione bidirezionale `User` 1-N `Ticket` implementata (`tickets.user_id`)
+- [x] Repository Spring Data JPA `UserRepository` e `TicketRepository` implementati
+- [x] Applicazione avviata e schema Hibernate verificato su PostgreSQL (`users`, `tickets` e foreign key)
 
 ---
 
 ## In Corso
 
-- Avviare Fase 2: entity `User` e `Ticket`
-- Creare repository JPA e verificare schema tabelle
+- Avviare Fase 3: implementazione di `JwtService`
 
 ---
 
 ## Prossimo
 
-- Chiusura Fase 0 (baseline tecnica)
-- Esecuzione Fase 2: Entity + Repository + verifica schema DB
+- Implementare `JwtAuthenticationFilter`
+- Configurare `SecurityFilterChain` stateless e `UserDetailsService` custom
 
 ---
 
