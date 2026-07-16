@@ -24,9 +24,9 @@
 - [x] 15. Testare con Postman/curl
 
 ## Fase 5 — Ticket CRUD
-- [ ] 16. Definire i Record DTO: `TicketRequest`, `TicketResponse`
-- [ ] 17. Implementare `TicketService` (CRUD filtrato per utente loggato)
-- [ ] 18. Implementare `TicketController` con i 4 endpoint + `@PreAuthorize` per `ADMIN`
+- [x] 16. Definire i Record DTO: `TicketRequest`, `TicketResponse`
+- [x] 17. Implementare `TicketService` (CRUD filtrato per utente loggato)
+- [x] 18. Implementare `TicketController` con i 4 endpoint + `@PreAuthorize` per `ADMIN`
 
 ## Fase 6 — Integrazione AI
 - [ ] 19. Configurare `ChatClient` bean di Spring AI

@@ -8,9 +8,9 @@
 
 | Aspetto | Status |
 |---|---|
-| Fase corrente | Fase 5 — Ticket CRUD |
-| Completamento | ✅ 100% Fase 4 |
-| Blocker | Nessuno |
+| Fase corrente | Fase 6 — Integrazione AI |
+| Completamento | ✅ 100% Fase 5 |
+| Blocker | Nessuno per Fase 6; Testcontainers 1.19.8 resta incompatibile con Docker API 1.55 locale |
 
 ---
 
@@ -45,6 +45,10 @@
 - [x] Fase 4 completata: `AuthController` con `POST /api/auth/register` e `POST /api/auth/login`
 - [x] Gestione errori auth corretta: `/error` consentito dalla security per mantenere `401 Unauthorized`
 - [x] Verifica Fase 4 su PostgreSQL locale: registrazione `201`, login valido `200`, login con password errata `401`
+- [x] Fase 5: DTO `TicketRequest` e `TicketResponse` definiti
+- [x] Fase 5: `TicketService`, `TicketController` e autorizzazione `ADMIN` sul delete implementati
+- [x] Fase 5: test di integrazione `TicketControllerIntegrationTest` creato e compilato
+- [x] Fase 5 verificata manualmente su PostgreSQL locale: create `201`, lista proprietario `200`, ticket altrui `404`, delete USER `403`, delete ADMIN `204`, payload non valido `400`
 
 ---
 
@@ -56,12 +60,14 @@
 
 ## Prossimo
 
-- Definire `TicketRequest` e `TicketResponse`
-- Implementare `TicketService` con ownership check dell'utente autenticato
-- Implementare `TicketController` e policy `ADMIN`
+- Configurare `ChatClient` bean di Spring AI
+- Definire `TicketAnalysisResult` e implementare `AiService`
+- Aggiungere `POST /api/tickets/analyze`
 
 ---
 
 ## Note
 
 Progetto in: `/Users/antonio/Desktop/dev/smart-ticket-expense-api`
+
+Testcontainers 1.19.8, gestito da Spring Boot 3.3.0, riceve `400 Bad Request` da Docker Desktop 29.6.1 con API 1.55 prima dell'avvio del container. `mvn test -DskipTests` compila correttamente sorgenti principali e test.
