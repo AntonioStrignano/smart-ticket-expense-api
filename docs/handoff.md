@@ -8,8 +8,8 @@
 
 | Aspetto | Status |
 |---|---|
-| Fase corrente | Fase 4 — Auth Endpoints |
-| Completamento | ✅ 100% Fase 3 |
+| Fase corrente | Fase 5 — Ticket CRUD |
+| Completamento | ✅ 100% Fase 4 |
 | Blocker | Nessuno |
 
 ---
@@ -40,19 +40,25 @@
 - [x] Fase 3 completata: `JwtAuthenticationFilter` per header Bearer e `SecurityContextHolder`
 - [x] Fase 3 completata: `SecurityFilterChain` stateless con rotte auth e Swagger pubbliche
 - [x] Verifica Fase 3: `mvn test` concluso con `BUILD SUCCESS`
+- [x] Fase 4 completata: DTO `RegisterRequest`, `LoginRequest` e `AuthResponse`
+- [x] Fase 4 completata: `AuthService` con registrazione BCrypt, ruolo iniziale `USER` e login JWT
+- [x] Fase 4 completata: `AuthController` con `POST /api/auth/register` e `POST /api/auth/login`
+- [x] Gestione errori auth corretta: `/error` consentito dalla security per mantenere `401 Unauthorized`
+- [x] Verifica Fase 4 su PostgreSQL locale: registrazione `201`, login valido `200`, login con password errata `401`
 
 ---
 
 ## In Corso
 
-- Avviare Fase 4: DTO per registrazione e login
+- Nessuna attivita in corso
 
 ---
 
 ## Prossimo
 
-- Creare `RegisterRequest`, `LoginRequest` e `AuthResponse`
-- Implementare `AuthService` e `AuthController`
+- Definire `TicketRequest` e `TicketResponse`
+- Implementare `TicketService` con ownership check dell'utente autenticato
+- Implementare `TicketController` e policy `ADMIN`
 
 ---
 

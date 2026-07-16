@@ -18,10 +18,10 @@
 - [x] 11. Implementare `UserDetailsService` custom
 
 ## Fase 4 — Auth Endpoints
-- [ ] 12. Definire i Record DTO: `RegisterRequest`, `LoginRequest`, `AuthResponse`
-- [ ] 13. Implementare `AuthService` (register con BCrypt, login con token)
-- [ ] 14. Implementare `AuthController` (`/api/auth/register`, `/api/auth/login`)
-- [ ] 15. Testare con Postman/curl
+- [x] 12. Definire i Record DTO: `RegisterRequest`, `LoginRequest`, `AuthResponse`
+- [x] 13. Implementare `AuthService` (register con BCrypt, login con token)
+- [x] 14. Implementare `AuthController` (`/api/auth/register`, `/api/auth/login`)
+- [x] 15. Testare con Postman/curl
 
 ## Fase 5 — Ticket CRUD
 - [ ] 16. Definire i Record DTO: `TicketRequest`, `TicketResponse`
