@@ -1,1 +1,13 @@
 /Users/antonio/Desktop/dev/smart-ticket-expense-api/src/main/java/com/example/smartticket/SmartTicketExpenseApiApplication.java
+/Users/antonio/Desktop/dev/smart-ticket-expense-api/src/main/java/com/example/smartticket/config/SecurityConfig.java
+/Users/antonio/Desktop/dev/smart-ticket-expense-api/src/main/java/com/example/smartticket/entity/Ticket.java
+/Users/antonio/Desktop/dev/smart-ticket-expense-api/src/main/java/com/example/smartticket/entity/User.java
+/Users/antonio/Desktop/dev/smart-ticket-expense-api/src/main/java/com/example/smartticket/enums/Role.java
+/Users/antonio/Desktop/dev/smart-ticket-expense-api/src/main/java/com/example/smartticket/enums/TicketCategory.java
+/Users/antonio/Desktop/dev/smart-ticket-expense-api/src/main/java/com/example/smartticket/enums/TicketPriority.java
+/Users/antonio/Desktop/dev/smart-ticket-expense-api/src/main/java/com/example/smartticket/enums/TicketStatus.java
+/Users/antonio/Desktop/dev/smart-ticket-expense-api/src/main/java/com/example/smartticket/repository/TicketRepository.java
+/Users/antonio/Desktop/dev/smart-ticket-expense-api/src/main/java/com/example/smartticket/repository/UserRepository.java
+/Users/antonio/Desktop/dev/smart-ticket-expense-api/src/main/java/com/example/smartticket/security/CustomUserDetailsService.java
+/Users/antonio/Desktop/dev/smart-ticket-expense-api/src/main/java/com/example/smartticket/security/JwtAuthenticationFilter.java
+/Users/antonio/Desktop/dev/smart-ticket-expense-api/src/main/java/com/example/smartticket/security/JwtService.java

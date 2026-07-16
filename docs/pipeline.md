@@ -12,10 +12,10 @@
 - [x] 7. Verificare che Hibernate generi le tabelle correttamente (`ddl-auto=update`)
 
 ## Fase 3 — Sicurezza (JWT + Spring Security)
-- [ ] 8. Implementare `JwtService` (generazione + validazione token, firma HMAC-256)
-- [ ] 9. Implementare `JwtAuthenticationFilter` (estrazione Bearer dall'header)
-- [ ] 10. Configurare `SecurityFilterChain` (stateless, rotte pubbliche vs protette)
-- [ ] 11. Implementare `UserDetailsService` custom
+- [x] 8. Implementare `JwtService` (generazione + validazione token, firma HMAC-256)
+- [x] 9. Implementare `JwtAuthenticationFilter` (estrazione Bearer dall'header)
+- [x] 10. Configurare `SecurityFilterChain` (stateless, rotte pubbliche vs protette)
+- [x] 11. Implementare `UserDetailsService` custom
 
 ## Fase 4 — Auth Endpoints
 - [ ] 12. Definire i Record DTO: `RegisterRequest`, `LoginRequest`, `AuthResponse`

@@ -8,8 +8,8 @@
 
 | Aspetto | Status |
 |---|---|
-| Fase corrente | Fase 3 — Sicurezza (JWT + Spring Security) |
-| Completamento | ✅ 100% Fase 2 |
+| Fase corrente | Fase 4 — Auth Endpoints |
+| Completamento | ✅ 100% Fase 3 |
 | Blocker | Nessuno |
 
 ---
@@ -35,19 +35,24 @@
 - [x] Relazione bidirezionale `User` 1-N `Ticket` implementata (`tickets.user_id`)
 - [x] Repository Spring Data JPA `UserRepository` e `TicketRepository` implementati
 - [x] Applicazione avviata e schema Hibernate verificato su PostgreSQL (`users`, `tickets` e foreign key)
+- [x] Fase 3 completata: `JwtService` con firma HMAC-SHA-256 e validazione token
+- [x] Fase 3 completata: `CustomUserDetailsService` basato su `UserRepository`
+- [x] Fase 3 completata: `JwtAuthenticationFilter` per header Bearer e `SecurityContextHolder`
+- [x] Fase 3 completata: `SecurityFilterChain` stateless con rotte auth e Swagger pubbliche
+- [x] Verifica Fase 3: `mvn test` concluso con `BUILD SUCCESS`
 
 ---
 
 ## In Corso
 
-- Avviare Fase 3: implementazione di `JwtService`
+- Avviare Fase 4: DTO per registrazione e login
 
 ---
 
 ## Prossimo
 
-- Implementare `JwtAuthenticationFilter`
-- Configurare `SecurityFilterChain` stateless e `UserDetailsService` custom
+- Creare `RegisterRequest`, `LoginRequest` e `AuthResponse`
+- Implementare `AuthService` e `AuthController`
 
 ---
 

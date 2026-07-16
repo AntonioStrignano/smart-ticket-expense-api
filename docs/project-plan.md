@@ -45,7 +45,7 @@ Impatto: serve un avvio ordinato partendo da modello dati e sicurezza, prima di 
 
 ## 4) Piano per fasi (con dipendenze)
 
-## Fase 0 — Baseline tecnica
+## Fase 1 — Scaffolding e configurazione
 
 ### Obiettivo
 Portare il progetto in uno stato buildabile e ripetibile localmente.
@@ -69,7 +69,7 @@ Portare il progetto in uno stato buildabile e ripetibile localmente.
 
 ---
 
-## Fase 1 — Dominio e persistenza
+## Fase 2 — Modello dati e persistenza
 
 ### Obiettivo
 Stabilire il modello dati stabile prima della logica business.
@@ -96,7 +96,7 @@ Completata il 2026-07-16: entity, enum, repository e schema PostgreSQL verificat
 
 ---
 
-## Fase 2 — Sicurezza e autenticazione
+## Fase 3 — Sicurezza (JWT e Spring Security)
 
 ### Obiettivo
 Abilitare accesso sicuro all'API prima dei controller business.
@@ -106,21 +106,43 @@ Abilitare accesso sicuro all'API prima dei controller business.
 - Implementare `JwtAuthenticationFilter`.
 - Implementare `UserDetailsService` custom.
 - Configurare `SecurityConfig` con rotte pubbliche/protette.
-- Implementare `AuthService` + `AuthController` (`/register`, `/login`).
 
 ### Dipende da
-- Fase 1 (serve `UserRepository`).
+- Fase 2 (serve `UserRepository`).
+
+### Deliverable
+- Infrastruttura di autenticazione JWT stateless.
+
+### Definition of Done
+- I token validi sono letti dal filtro e trasformati in autenticazione Spring Security.
+- Le rotte non pubbliche richiedono un utente autenticato.
+
+---
+
+## Fase 4 — Auth endpoints
+
+### Obiettivo
+Esporre registrazione e login sopra l'infrastruttura JWT gia configurata.
+
+### Attivita
+- Definire i record DTO `RegisterRequest`, `LoginRequest` e `AuthResponse`.
+- Implementare `AuthService` con hash BCrypt e generazione JWT.
+- Implementare `AuthController` (`/api/auth/register`, `/api/auth/login`).
+- Testare gli endpoint con casi positivi e negativi.
+
+### Dipende da
+- Fase 3.
 
 ### Deliverable
 - Flusso register/login funzionante con token JWT.
 
 ### Definition of Done
-- Endpoint auth testati con casi positivi/negativi.
-- Endpoint protetti rifiutano richieste senza token valido.
+- Gli endpoint auth sono accessibili senza token.
+- Le credenziali valide restituiscono un JWT utilizzabile sulle rotte protette.
 
 ---
 
-## Fase 3 — Ticket API core
+## Fase 5 — Ticket API core
 
 ### Obiettivo
 Rilasciare il ciclo ticket con policy autorizzative chiare.
@@ -136,7 +158,7 @@ Rilasciare il ciclo ticket con policy autorizzative chiare.
 - Aggiungere validazioni request e gestione errori (`404`, `403`, `400`).
 
 ### Dipende da
-- Fase 2.
+- Fase 4.
 
 ### Deliverable
 - API ticket stabile e coerente con i ruoli.
@@ -147,7 +169,7 @@ Rilasciare il ciclo ticket con policy autorizzative chiare.
 
 ---
 
-## Fase 4 — Integrazione AI strutturata
+## Fase 6 — Integrazione AI strutturata
 
 ### Obiettivo
 Introdurre AI solo dopo base applicativa stabile.
@@ -159,7 +181,7 @@ Introdurre AI solo dopo base applicativa stabile.
 - Gestire failure mode AI (timeout, output non valido, fallback errore chiaro).
 
 ### Dipende da
-- Fase 3.
+- Fase 5.
 
 ### Deliverable
 - Endpoint AI con output sempre tipizzato.
@@ -170,7 +192,7 @@ Introdurre AI solo dopo base applicativa stabile.
 
 ---
 
-## Fase 5 — Qualita, documentazione, hardening
+## Fase 7 — Qualita, documentazione, hardening
 
 ### Obiettivo
 Chiudere la prima release con affidabilita minima da sviluppo reale.
@@ -183,7 +205,7 @@ Chiudere la prima release con affidabilita minima da sviluppo reale.
 - Eseguire smoke test end-to-end.
 
 ### Dipende da
-- Fase 4.
+- Fase 6.
 
 ### Deliverable
 - Build documentata e verificata.
@@ -196,12 +218,13 @@ Chiudere la prima release con affidabilita minima da sviluppo reale.
 
 ## 5) Sequenza operativa consigliata (anti-rework)
 
-1. Chiudere Fase 0 prima di scrivere logica applicativa.
-2. Bloccare schema dati in Fase 1.
-3. Implementare sicurezza completa in Fase 2.
-4. Esporre endpoint ticket in Fase 3.
-5. Integrare AI in Fase 4 solo con contratti già stabili.
-6. Finalizzare quality gate in Fase 5.
+1. Chiudere Fase 1 prima di scrivere logica applicativa.
+2. Bloccare schema dati in Fase 2.
+3. Implementare infrastruttura di sicurezza in Fase 3.
+4. Esporre register/login in Fase 4.
+5. Esporre endpoint ticket in Fase 5.
+6. Integrare AI in Fase 6 solo con contratti già stabili.
+7. Finalizzare quality gate in Fase 7.
 
 Motivo: ogni fase riduce incertezza per la successiva, minimizzando rifattorizzazioni trasversali.
 
@@ -220,7 +243,7 @@ Motivo: ogni fase riduce incertezza per la successiva, minimizzando rifattorizza
 ## 7) Primo sprint consigliato (immediato)
 
 ### Sprint target
-Chiudere Fase 0 + base Fase 1.
+Chiudere Fase 1 + base Fase 2.
 
 ### Task eseguibili subito
 - Build Maven e fix eventuali incompatibilita dipendenze.
