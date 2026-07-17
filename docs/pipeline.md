@@ -2,7 +2,7 @@
 
 ## Fase 1 — Scaffolding & Configurazione
 - [x] 1. Generare il progetto via Spring Initializr con le dipendenze corrette
-- [x] 2. Configurare `application.properties` (DB, JWT secret, OpenAI key)
+- [x] 2. Configurare `application.properties` (DB, JWT secret, endpoint Ollama locale)
 - [x] 3. Verificare connessione PostgreSQL e creare il database `smart_ticket_db`
 
 ## Fase 2 — Modello Dati & Persistenza
@@ -28,7 +28,7 @@
 - [x] 17. Implementare `TicketService` (CRUD filtrato per utente loggato)
 - [x] 18. Implementare `TicketController` con i 4 endpoint + `@PreAuthorize` per `ADMIN`
 
-## Fase 6 — Integrazione AI
+## Fase 6 — Integrazione AI (Ollama locale)
 - [ ] 19. Configurare `ChatClient` bean di Spring AI
 - [ ] 20. Definire il Record `TicketAnalysisResult(category, priority, summary)`
 - [ ] 21. Implementare `AiService` con `BeanOutputConverter` per Structured Output

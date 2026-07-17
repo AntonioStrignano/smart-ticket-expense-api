@@ -1,6 +1,6 @@
 # Handoff — Smart Ticket & Expense API
 
-**Last Updated:** 2026-07-16
+**Last Updated:** 2026-07-17
 
 ---
 
@@ -29,7 +29,7 @@
 - [x] Task 3 Fase 1 completato: DB `smart_ticket_db` verificato e raggiungibile
 - [x] Ambiente shell aggiornato con PATH/JAVA_HOME persistenti
 - [x] Correzione XML `pom.xml` (`&amp;` nel campo `name`)
-- [x] Dipendenza Spring AI corretta (`spring-ai.version=1.0.0`, starter OpenAI aggiornato)
+- [x] Dipendenza Spring AI configurata (`spring-ai.version=1.0.0`, starter Ollama)
 - [x] Build Maven verificata con successo (`mvn clean verify -DskipTests`)
 - [x] Entity JPA `User` e `Ticket` implementate con enum di dominio
 - [x] Relazione bidirezionale `User` 1-N `Ticket` implementata (`tickets.user_id`)
@@ -49,6 +49,7 @@
 - [x] Fase 5: `TicketService`, `TicketController` e autorizzazione `ADMIN` sul delete implementati
 - [x] Fase 5: test di integrazione `TicketControllerIntegrationTest` creato e compilato
 - [x] Fase 5 verificata manualmente su PostgreSQL locale: create `201`, lista proprietario `200`, ticket altrui `404`, delete USER `403`, delete ADMIN `204`, payload non valido `400`
+- [x] Documentazione AI allineata a Ollama locale (`qwen2.5:3b`); OpenAI non e utilizzato
 
 ---
 

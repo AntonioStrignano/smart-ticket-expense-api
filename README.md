@@ -15,7 +15,7 @@ L'applicazione è un'API REST backend sviluppata in Java con l'ecosistema Spring
 | Sicurezza | Spring Security + JWT |
 | Accesso ai Dati | Spring Data JPA + Hibernate |
 | Database | PostgreSQL |
-| Integrazione AI | Spring AI 2.0.0 |
+| Integrazione AI | Spring AI 1.0.0 + Ollama locale |
 | Documentazione API | Springdoc-openapi (Swagger UI) |
 
 ---
@@ -35,7 +35,7 @@ L'applicazione è un'API REST backend sviluppata in Java con l'ecosistema Spring
 [Services Layer]
        ├───> [Spring Data JPA Repositories] ───> [PostgreSQL]
        │
-       └───> [Spring AI ChatClient] ───> [Provider LLM (OpenAI/Ollama)]
+       └───> [Spring AI ChatClient] ───> [Ollama locale (`qwen2.5:3b`)]
 ```
 
 ---
@@ -107,10 +107,10 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
 
-# Configurazione Spring AI (Esempio con OpenAI)
-spring.ai.openai.api-key=${OPENAI_API_KEY}
-spring.ai.openai.chat.options.model=gpt-4o-mini
-spring.ai.openai.chat.options.temperature=0.3
+# Configurazione Spring AI (Ollama locale)
+spring.ai.ollama.base-url=http://localhost:11434
+spring.ai.ollama.chat.options.model=qwen2.5:3b
+spring.ai.ollama.chat.options.temperature=0.1
 
 # Proprietà Sicurezza JWT
 jwt.secret=your_super_secret_key_minimum_256_bits_length_here

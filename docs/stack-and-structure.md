@@ -20,7 +20,7 @@ Da aggiungere al momento della generazione del progetto:
 - `Spring Security`
 - `Spring Data JPA`
 - `PostgreSQL Driver`
-- `Spring AI OpenAI` (o Ollama)
+- `Spring AI Ollama` (provider locale configurato)
 - `Springdoc OpenAPI` (aggiunta manuale nel `pom.xml`)
 - `jjwt` (JJWT — aggiunta manuale nel `pom.xml`)
 

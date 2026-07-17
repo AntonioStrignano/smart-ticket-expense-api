@@ -53,7 +53,7 @@ Portare il progetto in uno stato buildabile e ripetibile localmente.
 ### Attività
 - Verificare build Maven (`mvn clean verify`).
 - Verificare connessione PostgreSQL locale su `smart_ticket_db`.
-- Confermare variabili e secret minimi (`OPENAI_API_KEY`, `jwt.secret`).
+- Confermare configurazione locale minima (endpoint Ollama e `jwt.secret`).
 - Definire convenzioni package, naming e formato response errori.
 
 ### Dipende da
@@ -169,14 +169,14 @@ Rilasciare il ciclo ticket con policy autorizzative chiare.
 
 ---
 
-## Fase 6 — Integrazione AI strutturata
+## Fase 6 — Integrazione AI strutturata con Ollama
 
 ### Obiettivo
 Introdurre AI solo dopo base applicativa stabile.
 
 ### Attività
 - Definire record `TicketAnalysisResult`.
-- Implementare `AiService` con `ChatClient` + `BeanOutputConverter`.
+- Implementare `AiService` con `ChatClient` + `BeanOutputConverter` su Ollama locale.
 - Implementare `POST /api/tickets/analyze`.
 - Gestire failure mode AI (timeout, output non valido, fallback errore chiaro).
 
