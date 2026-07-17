@@ -8,9 +8,9 @@
 
 | Aspetto | Status |
 |---|---|
-| Fase corrente | Fase 6 — Integrazione AI |
-| Completamento | ✅ 100% Fase 5 |
-| Blocker | Nessuno per Fase 6; Testcontainers 1.19.8 resta incompatibile con Docker API 1.55 locale |
+| Fase corrente | Fase 7 — Documentazione & Rifinitura |
+| Completamento | ✅ 100% Fase 6 |
+| Blocker | Testcontainers 1.19.8 resta incompatibile con Docker API 1.55 locale |
 
 ---
 
@@ -50,6 +50,9 @@
 - [x] Fase 5: test di integrazione `TicketControllerIntegrationTest` creato e compilato
 - [x] Fase 5 verificata manualmente su PostgreSQL locale: create `201`, lista proprietario `200`, ticket altrui `404`, delete USER `403`, delete ADMIN `204`, payload non valido `400`
 - [x] Documentazione AI allineata a Ollama locale (`qwen2.5:3b`); OpenAI non e utilizzato
+- [x] Fase 6: `ChatClient` configurato su Ollama locale e DTO `TicketAnalysisRequest`/`TicketAnalysisResult` definiti
+- [x] Fase 6: `AiService` usa `BeanOutputConverter` e `POST /api/tickets/analyze` e implementato
+- [x] Fase 6 verificata end-to-end: avvio applicazione, analisi AI con JWT `200` e output strutturato valido, input `rawText` vuoto `400`
 
 ---
 
@@ -61,9 +64,9 @@
 
 ## Prossimo
 
-- Configurare `ChatClient` bean di Spring AI
-- Definire `TicketAnalysisResult` e implementare `AiService`
-- Aggiungere `POST /api/tickets/analyze`
+- Configurare Springdoc/Swagger UI con security scheme JWT
+- Aggiungere `@Operation` e `@SecurityRequirement` ai controller
+- Eseguire test end-to-end dell'intero flusso
 
 ---
 

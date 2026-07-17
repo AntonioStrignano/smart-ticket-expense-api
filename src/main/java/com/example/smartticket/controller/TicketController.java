@@ -2,8 +2,11 @@ package com.example.smartticket.controller;
 
 import java.util.List;
 
+import com.example.smartticket.dto.TicketAnalysisRequest;
+import com.example.smartticket.dto.TicketAnalysisResult;
 import com.example.smartticket.dto.TicketRequest;
 import com.example.smartticket.dto.TicketResponse;
+import com.example.smartticket.service.AiService;
 import com.example.smartticket.service.TicketService;
 
 import jakarta.validation.Valid;
@@ -25,9 +28,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class TicketController {
 
     private final TicketService ticketService;
+    private final AiService aiService;
 
-    public TicketController(TicketService ticketService) {
+    public TicketController(TicketService ticketService, AiService aiService) {
         this.ticketService = ticketService;
+        this.aiService = aiService;
     }
 
     @PostMapping
@@ -50,6 +55,13 @@ public class TicketController {
             Authentication authentication
     ) {
         return ticketService.getTicketById(ticketId, authentication.getName());
+    }
+
+    @PostMapping("/analyze")
+    public TicketAnalysisResult analyzeTicket(
+            @Valid @RequestBody TicketAnalysisRequest request
+    ) {
+        return aiService.analyzeTicket(request);
     }
 
     @DeleteMapping("/{ticketId}")

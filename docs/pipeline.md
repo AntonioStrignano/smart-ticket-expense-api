@@ -29,10 +29,10 @@
 - [x] 18. Implementare `TicketController` con i 4 endpoint + `@PreAuthorize` per `ADMIN`
 
 ## Fase 6 — Integrazione AI (Ollama locale)
-- [ ] 19. Configurare `ChatClient` bean di Spring AI
-- [ ] 20. Definire il Record `TicketAnalysisResult(category, priority, summary)`
-- [ ] 21. Implementare `AiService` con `BeanOutputConverter` per Structured Output
-- [ ] 22. Aggiungere endpoint `POST /api/tickets/analyze` al controller
+- [x] 19. Configurare `ChatClient` bean di Spring AI
+- [x] 20. Definire il Record `TicketAnalysisResult(category, priority, summary)`
+- [x] 21. Implementare `AiService` con `BeanOutputConverter` per Structured Output
+- [x] 22. Aggiungere endpoint `POST /api/tickets/analyze` al controller
 
 ## Fase 7 — Documentazione & Rifinitura
 - [ ] 23. Configurare Springdoc/Swagger UI con security scheme JWT
